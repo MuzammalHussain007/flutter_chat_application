@@ -9,18 +9,21 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-        backgroundColor: Colors.pink,
-        accentColor: Colors.deepPurple,
-        accentColorBrightness: Brightness.dark,
-        buttonTheme: ButtonTheme.of(context).copyWith(
-         buttonColor: Colors.pink,
-         textTheme: ButtonTextTheme.primary,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
-        )
-      ),
+          primarySwatch: Colors.pink,
+          backgroundColor: Colors.pink,
+          accentColor: Colors.deepPurple,
+          accentColorBrightness: Brightness.dark,
+          buttonTheme: ButtonTheme.of(context).copyWith(
+              buttonColor: Colors.pink,
+              textTheme: ButtonTextTheme.primary,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)))),
       title: 'Application',
       home: const AuthScreen(),
+      routes: {
+        AuthScreen.routeName: (ctx) => AuthScreen(),
+        ChatScreen.routeName: (ctx)=> ChatScreen(),
+      },
     );
   }
 }
